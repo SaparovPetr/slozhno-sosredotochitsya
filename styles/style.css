@@ -6,19 +6,9 @@
   font-family: "IBM Plex mono", Arial, Helvetica, sans-serif;
 }
 
-
-
-/*   Общие паддинги  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
 .paddings {
   padding: 40px 10px 10px;
 }
-
-
-/*ХЭДЕР !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
-
-
 
 .decorated-zone::after {
   content: "";
@@ -27,8 +17,8 @@
   inset-inline-end: 10px;
   block-size: 25px;
   inline-size: 25px;
-  border-block-start: 1px solid var(--second-title-color);
-  border-inline-end: 1px solid var(--second-title-color);
+  border-block-start: 1px solid var(--second-title-color, #ff0070);
+  border-inline-end: 1px solid var(--second-title-color , #ff0070);
 }
 
 .decorated-zone::before {
@@ -38,11 +28,9 @@
   inset-inline-start: 10px;
   block-size: 25px;
   inline-size: 25px;
-  border-block-end: 1px solid var(--second-title-color);
-  border-inline-start: 1px solid var(--second-title-color);
+  border-block-end: 1px solid var(--second-title-color, #ff0070);
+  border-inline-start: 1px solid var(--second-title-color, #ff0070);
 }
-
-
 
 .header {
   padding: 10px;
@@ -51,42 +39,30 @@
   block-size: 100vh;
   min-block-size: 668px;
   position: relative;
-
 }
-
-
-
 
 .header__wrapper {
   display: grid;
   grid-template-rows: 1fr fit-content(98px) 1fr;
-
 }
 
-
 .title {
-  color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--title-color, #db00ff);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: 700;
   line-height: 82.5%; /* 95.7px */
   align-self: center;
 }
 
-
-
 .header__problem {
   align-self: center;
-
 }
-
-
-
 
 .header__rec {
   align-self: start;
   justify-self: end;
-  color: var(--second-title-color);
+  color: var(--second-title-color, #ff0070);
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 400;
@@ -102,10 +78,9 @@
   block-size: 9px;
   inline-size: 9px;
   border-radius: 50%;
-  filter: drop-shadow(0px 0px 4px var(--second-title-color));
-  background-color: var(--second-title-color);
+  filter: drop-shadow(0px 0px 4px var(--second-title-color, #ff0070));
+  background-color: var(--second-title-color, #ff0070);
 }
-
 
 .header__theme-menu {
   align-self: start;
@@ -128,29 +103,28 @@
 }
 
 .header__theme-menu-item:has(.header__theme-menu-button_active) {
-  outline: 1px solid var(--second-title-color);
+  outline: 1px solid var(--second-title-color, #ff0070);
 }
 
 /* с ним обводка актвиной кнопки не меняется при наведении, иначе, обводка получается двойной*/
 .header__theme-menu-item:has(.header__theme-menu-button_active):hover {
-  outline: 1px solid var(--second-title-color);
+  outline: 1px solid var(--second-title-color, #ff0070);
 }
 
 .header__theme-menu-item:hover {
-  outline: 1px solid var(--accent-color-hover);
+  outline: 1px solid var(--accent-color-hover, rgba(255, 0, 112, 0.4));
 }
 
 .header__theme-menu-button {
   line-height: 100%;
   border: none;
   padding: 0 13px;
-  color: var(--second-title-color);
+  color: var(--second-title-color, #ff0070);
   font-size: 18px;
   background-color: transparent;
   cursor: pointer;
   text-align: center;
   text-transform: lowercase;
-  /* margin-block-start: -2px; */
 }
 
 .header__theme-menu-button:focus {
@@ -158,55 +132,50 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--second-title-color);
+  border-block-end: 1px solid var(--second-title-color, #ff0070);
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
 }
 
-
-
 .title-decor {
-  color: var(--mini-title-color);
+  color: var(--mini-title-color, #000028);
   font-size: 18px;
   font-weight: 700;
   line-height: 130%; /* 23.4px */
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ff0070);
 }
 
 .title-decor_thin {
-  color: var(--mini-title-color);
+  color: var(--mini-title-color, #000028);
   font-size: 18px;
   font-weight: 400;
   line-height: 130%; /* 23.4px */
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ff0070);
 }
 
-/*   МЕЙН   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
 .second-title {
-  color: var(--second-title-color);
+  color: var(--second-title-color, #ff0070);
   font-size: 18px;
   font-weight: 700;
   line-height: 130%; /* 23.4px */
 }
 
 .paragraph {
-  color: var(--regular-text-color);
-  font-family: IBM Plex Mono;
+  color: var(--regular-text-color, #f1b2ce);
   font-size: 18px;
   font-weight: 400;
   line-height: 130%; /* 23.4px */
 }
 
 .link {
-  text-shadow: 2px 2px 0px var(--accent-color);
+  text-shadow: 2px 2px 0px var(--accent-color, #ff0070);
   text-decoration: none;
 }
 
 .link:hover {
-  border-block-end: 1px solid var(--regular-text-color);
+  border-block-end: 1px solid var(--regular-text-color, #f1b2ce);
 }
 
 .link:focus {
@@ -214,11 +183,9 @@
 }
 
 .link:focus-visible {
-  outline: 1px solid var(--regular-text-color);
+  outline: 1px solid var(--regular-text-color, #f1b2ce);
   outline-offset: 0.5px;
 }
-
-/*   why   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 .why {
   display: grid;
@@ -235,9 +202,6 @@
   gap: 10px;
 }
 
-
-/*   issues   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
 .issues {
   display: grid;
   gap: 20px;
@@ -253,9 +217,6 @@
   gap: 10px;
 }
 
-
-/*   advises   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
 .advises {
   display: grid;
   gap: 20px;
@@ -270,8 +231,6 @@
   display: grid;
   gap: 10px;
 }
-
-/*   pictures   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 .pictures {
   display: grid;
@@ -289,9 +248,6 @@
   object-fit: cover;
 }
 
-
-/*   ФУТЕР   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
 .footer {
   padding: 10px 0;
   margin-block-start: 30px;
@@ -301,91 +257,16 @@
   min-block-size: 667px;
   block-size: 100vh;
   position: relative;
-
 }
 
-
-
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Дублируем переменные темной темы */
-    --background-image: url(../images/cover-image-dark.png);
-    --accent-color: #ff0070;
-    --accent-color-hover: rgba(255, 0, 112, 0.4);
-    --title-color: #db00ff;
-    --mini-title-color: #000028;
-    --regular-text-color: #f1b2ce;
-    --second-title-color: #ff0070;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    /* Дублируем переменные светлой темы */
-    --background-image: url(../images/cover-image-light.png);
-    --accent-color: #ff8dcb;
-    --accent-color-hover: rgba(50, 49, 45, 0.4);
-    --title-color: #ffc2e6;
-    --mini-title-color: #353430;
-    --regular-text-color: #353430;
-    --second-title-color: #353430;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*ПЛАНШЕТ И БОЛЬШИЕ ЭКРАНЫ*/
 @media (768px <= width < 5000px) {
-
   .paddings {
     padding: 60px 20px 20px;
   }
 
   .header {
     padding: 20px;
-
   }
 
   .title {
@@ -395,8 +276,6 @@
   .title_header {
     margin-inline-start: -20px;
   }
-
-
 
   .header__problem {
     inline-size: 50%;
@@ -408,8 +287,6 @@
     inset-inline-end: 20px;
   }
 
-
-
   .decorated-zone::before {
     inset-block-end: 20px;
     inset-inline-start: 20px;
@@ -419,9 +296,6 @@
     inset-block-start: 30px;
     inset-inline-end: 30px;
   }
-
-
-
 
   .why {
     grid-template-columns: repeat(3, 1fr);
@@ -441,7 +315,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-
 
   .advises {
     grid-template-columns: repeat(3, 1fr);
@@ -489,38 +362,20 @@
     grid-area: street;
   }
 
-
   .footer {
     margin-block-start: 40px;
   }
-
-
-
 }
 
-
-
-
-
-
-
-
+/*ТОЛЬКО ПЛАНШЕТ -- БЕЗ ЭТОГО ЗАПРОСА НЕ ПРОХОДИТ ПЕРФЕКТ-АВТОТЕСТ*/
 @media (768px <= width < 1024px) {
   .paragraph {
     letter-spacing: 0.2px;
   }
-
- 
-
 }
 
-
-
-
-
+/*ТОЛЬКО БОЛЬШИЕ ЭКРАНЫ*/
 @media (1024px <= width < 5000px) {
-
-
   .header__wrapper {
     display: grid;
     grid-template-columns: 1fr 350px 1fr;
@@ -541,14 +396,32 @@
     flex-direction: row;
   }
 
-  /* .paragraph {
-    letter-spacing: 0.2px;
-  } */
-
   .issues__list {
     grid-template-columns: repeat(3, 1fr);
     align-items: start;
   }
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-image: url(../images/cover-image-dark.png);
+    --accent-color: #ff0070;
+    --accent-color-hover: rgba(255, 0, 112, 0.4);
+    --title-color: #db00ff;
+    --mini-title-color: #000028;
+    --regular-text-color: #f1b2ce;
+    --second-title-color: #ff0070;
+  }
+}
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-image: url(../images/cover-image-light.png);
+    --accent-color: #ff8dcb;
+    --accent-color-hover: rgba(50, 49, 45, 0.4);
+    --title-color: #ffc2e6;
+    --mini-title-color: #353430;
+    --regular-text-color: #353430;
+    --second-title-color: #353430;
+  }
 }
