@@ -198,6 +198,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 130%; /* 23.4px */
+  letter-spacing: 0.3px;
 }
 
 .link {
@@ -462,24 +463,24 @@
       "tape street street";
   }
 
-  .sunset {
+  .pictures__item_sunset {
     grid-area: sunset;
     object-fit: cover;
   }
 
-  .ice-cream {
+  .pictures__item_ice-cream {
     grid-area: ice-cream;
   }
 
-  .tape {
+  .pictures__item_tape {
     grid-area: tape;
   }
 
-  .books {
+  .pictures__item_books {
     grid-area: books;
   }
 
-  .street {
+  .pictures__item_street {
     grid-area: street;
   }
 
