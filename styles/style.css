@@ -430,6 +430,11 @@
     grid-area: why__list;
   }
 
+  .issues__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
 
   .advises {
     grid-template-columns: repeat(3, 1fr);
