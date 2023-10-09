@@ -3,45 +3,34 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* padding: 0 10px; */
   font-family: "IBM Plex mono", Arial, Helvetica, sans-serif;
 }
 
 
-/* 
-@media (768px <= width < 5000px) {
-  .page {
-    padding: 0 20px;
-    
-  }
-} */
 
 /*   Общие паддинги  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 .paddings {
-  padding: 40px 0 10px 0;
+  padding: 40px 10px 10px;
 }
 
-@media (768px <= width < 1024px) {
-  .paddings {
-    padding: 60px 0 20px 0;
-  }
-}
 
-@media (1024px <= width < 5000px) {
+
+@media (768px <= width < 5000px) {
   .paddings {
-    padding: 60px 0 20px 0;
+    padding: 60px 20px 20px;
   }
 }
 
 /*ХЭДЕР !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 .header {
-  padding: 10px 0;
+  padding: 10px;
   display: grid;
   block-size: 100vh;
   min-block-size: 668px;
   position: relative;
+  gap: 16px;
 }
 
 
@@ -50,7 +39,7 @@
   content: "";
   position: absolute;
   inset-block-start: 10px;
-  inset-inline-end: 0%;
+  inset-inline-end: 10px;
   block-size: 25px;
   inline-size: 25px;
   border-block-start: 1px solid var(--second-title-color);
@@ -61,7 +50,7 @@
   content: "";
   position: absolute;
   inset-block-end: 10px;
-  inset-inline-start: 0%;
+  inset-inline-start: 10px;
   block-size: 25px;
   inline-size: 25px;
   border-block-end: 1px solid var(--second-title-color);
@@ -73,15 +62,19 @@
 @media (768px <= width < 5000px) {
 
   .header {
-    padding: 20px 0;
+    padding: 20px;
   }
 
   .decorated-zone::after {
     inset-block-start: 20px;
+    inset-inline-end: 20px;
   }
+
+  
 
   .decorated-zone::before {
     inset-block-end: 20px;
+    inset-inline-start: 20px;
   }
 
 
@@ -90,6 +83,7 @@
 
 .header__wrapper {
   display: grid;
+  gap: 9px;
 }
 
 .header__rec {
@@ -106,8 +100,8 @@
 .header__rec::after {
   content: "";
   position: absolute;
-  inset-block-start: 20px;
-  inset-inline-end: 10px;
+  inset-block-start: 18px;
+  inset-inline-end: 19px;
   block-size: 9px;
   inline-size: 9px;
   border-radius: 50%;
@@ -118,6 +112,7 @@
 @media (768px <= width < 5000px) {
   .header__rec::after {
     inset-block-start: 30px;
+    inset-inline-end: 30px;
   }
 
 }
@@ -130,7 +125,7 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 12px;
   padding: 0;
   list-style: none;
 }
@@ -165,7 +160,7 @@
   cursor: pointer;
   text-align: center;
   text-transform: lowercase;
-  margin-block-start: -2px;
+  /* margin-block-start: -2px; */
 }
 
 .header__theme-menu-button:focus {
@@ -186,9 +181,11 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: 700;
   line-height: 82.5%; /* 95.7px */
+  align-self: center;
 }
 
 .header__problem {
+  margin-block-start: 10px;
   align-self: start;
   justify-self: end;
 }
