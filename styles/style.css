@@ -371,7 +371,11 @@
 
 
 
-
+@media (768px <= width < 1024x) {
+  .paragraph {
+    letter-spacing: 0.3px;
+  }
+}
 
 
 
@@ -415,6 +419,7 @@
     inset-inline-end: 30px;
   }
 
+  
   
 
   .why {
@@ -502,11 +507,6 @@
 
 
 
-@media (768px <= width < 1440px) {
-  .paragraph {
-    letter-spacing: 0.3px;
-  }
-}
 
 
 @media (1024px <= width < 5000px) {
@@ -532,6 +532,9 @@
     flex-direction: row;
   }
 
+  .paragraph {
+    letter-spacing: 0.2px;
+  }
 
   .issues__list {
     grid-template-columns: repeat(3, 1fr);
