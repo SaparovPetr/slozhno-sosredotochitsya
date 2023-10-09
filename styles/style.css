@@ -3,18 +3,18 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 0 10px;
+  /* padding: 0 10px; */
   font-family: "IBM Plex mono", Arial, Helvetica, sans-serif;
 }
 
 
-
+/* 
 @media (768px <= width < 5000px) {
   .page {
     padding: 0 20px;
     
   }
-}
+} */
 
 /*   Общие паддинги  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
