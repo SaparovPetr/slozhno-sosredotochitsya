@@ -6,7 +6,10 @@
   --mini-title-color: #353430;
   --regular-text-color: #353430;
   --second-title-color: #353430;
-  .header__rec, .header__rec::after {
-    visibility: hidden;
-  } 
 }
+
+.theme_light .header__rec {
+  visibility: hidden;
+} 
+
+

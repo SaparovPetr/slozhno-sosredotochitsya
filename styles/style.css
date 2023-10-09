@@ -3,13 +3,15 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 10px;
+  padding: 0 10px;
   font-family: "IBM Plex mono", Arial, Helvetica, sans-serif;
 }
 
+
+
 @media (768px <= width < 5000px) {
   .page {
-    padding: 20px;
+    padding: 0 20px;
   }
 }
 
@@ -31,11 +33,59 @@
   }
 }
 
+/*ХЭДЕР !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
 .header {
+  padding: 10px 0;
   display: grid;
+  block-size: 100vh;
   min-block-size: 668px;
   position: relative;
 }
+
+
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 0%;
+  block-size: 25px;
+  inline-size: 25px;
+  border-block-start: 1px solid var(--second-title-color);
+  border-inline-end: 1px solid var(--second-title-color);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  inset-block-end: 10px;
+  inset-inline-start: 0%;
+  block-size: 25px;
+  inline-size: 25px;
+  border-block-end: 1px solid var(--second-title-color);
+  border-inline-start: 1px solid var(--second-title-color);
+}
+
+
+
+@media (768px <= width < 5000px) {
+
+  .header {
+    padding: 20px 0;
+  }
+
+  .decorated-zone::after {
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::before {
+    inset-block-end: 20px;
+  }
+
+
+}
+
 
 .header__wrapper {
   display: grid;
@@ -55,13 +105,20 @@
 .header__rec::after {
   content: "";
   position: absolute;
-  inset-block-start: 8px;
-  inset-inline-end: 9px;
+  inset-block-start: 20px;
+  inset-inline-end: 10px;
   block-size: 9px;
   inline-size: 9px;
   border-radius: 50%;
   filter: drop-shadow(0px 0px 4px var(--second-title-color));
   background-color: var(--second-title-color);
+}
+
+@media (768px <= width < 5000px) {
+  .header__rec::after {
+    inset-block-start: 30px;
+  }
+
 }
 
 .header__theme-menu {
@@ -149,28 +206,6 @@
   font-weight: 400;
   line-height: 130%; /* 23.4px */
   background-color: var(--accent-color);
-}
-
-.decorated-zone::after {
-  content: "";
-  position: absolute;
-  inset-block-start: 0%;
-  inset-inline-end: 0%;
-  block-size: 25px;
-  inline-size: 25px;
-  border-block-start: 1px solid var(--second-title-color);
-  border-inline-end: 1px solid var(--second-title-color);
-}
-
-.decorated-zone::before {
-  content: "";
-  position: absolute;
-  inset-block-end: 0%;
-  inset-inline-start: 0%;
-  block-size: 25px;
-  inline-size: 25px;
-  border-block-end: 1px solid var(--second-title-color);
-  border-inline-start: 1px solid var(--second-title-color);
 }
 
 @media (768px <= width < 1024px) {
@@ -386,19 +421,26 @@
 /*   ФУТЕР   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 .footer {
-  margin: 30px 0 0;
+  padding: 10px 0;
+  margin-block-start: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-block-size: 667px;
   position: relative;
+  
 }
 
 @media (768px <= width < 5000px) {
   .footer {
-    margin: 60px 0 0;
+    margin-block-start: 60px;
+    padding: 20px 0;
   }
 }
+
+
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
