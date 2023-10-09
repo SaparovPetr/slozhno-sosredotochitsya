@@ -503,17 +503,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+@media (768px <= width < 1440px) {
+  .paragraph {
+    letter-spacing: 0.3px;
+  }
+}
 
 
 @media (1024px <= width < 5000px) {
