@@ -1,4 +1,4 @@
-:root.theme_dark {
+.theme_dark {
   --background-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070;
   --accent-color-hover: rgba(255, 0, 112, 0.4);
@@ -6,5 +6,5 @@
   --mini-title-color: #000028;
   --regular-text-color: #f1b2ce;
   --second-title-color: #ff0070;
+  --special-shadow-color: #ff0070;
 }
-

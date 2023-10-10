@@ -6,10 +6,26 @@
   --mini-title-color: #353430;
   --regular-text-color: #353430;
   --second-title-color: #353430;
+  --special-shadow-color: #ff0070;
 }
 
 .theme_light .header__rec {
   visibility: hidden;
 } 
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-image: url(../images/cover-image-light.png);
+    --accent-color: #ff8dcb;
+    --accent-color-hover: rgba(50, 49, 45, 0.4);
+    --title-color: #ffc2e6;
+    --mini-title-color: #353430;
+    --regular-text-color: #353430;
+    --second-title-color: #353430;
+    --special-shadow-color: #ff0070;
+  }
 
+  .theme_auto  .header__rec {
+    visibility: hidden;
+  } 
+}

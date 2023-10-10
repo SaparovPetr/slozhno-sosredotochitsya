@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: "IBM Plex mono", Arial, Helvetica, sans-serif;
+  font-family: "IBM Plex mono", "Courier New", "Lucida Sans Typewriter", monospace;
 }
 
 .paddings {
@@ -45,20 +45,6 @@
   display: grid;
   grid-template-rows: 1fr fit-content(98px) 1fr;
 }
-
-.title {
-  color: var(--title-color, #db00ff);
-  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  font-weight: 700;
-  line-height: 82.5%; /* 95.7px */
-  align-self: center;
-}
-
-.header__problem {
-  align-self: center;
-}
-
 .header__rec {
   align-self: start;
   justify-self: end;
@@ -100,6 +86,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 1s;
 }
 
 .header__theme-menu-item:has(.header__theme-menu-button_active) {
@@ -113,7 +100,8 @@
 
 .header__theme-menu-item:hover {
   outline: 1px solid var(--accent-color-hover, rgba(255, 0, 112, 0.4));
-}
+  
+} 
 
 .header__theme-menu-button {
   line-height: 100%;
@@ -137,6 +125,19 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
+}
+
+.title {
+  color: var(--title-color, #db00ff);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 82.5%; /* 95.7px */
+  align-self: center;
+}
+
+.header__problem {
+  align-self: center;
 }
 
 .title-decor {
@@ -222,6 +223,11 @@
   gap: 20px;
 }
 
+.advises__article {
+  display: grid;
+  gap: 20px;
+}
+
 .advises__list {
   display: grid;
   gap: 20px;
@@ -260,7 +266,7 @@
 }
 
 /*ПЛАНШЕТ И БОЛЬШИЕ ЭКРАНЫ*/
-@media (768px <= width < 5000px) {
+@media (768px <= width) {
   .paddings {
     padding: 60px 20px 20px;
   }
@@ -318,15 +324,15 @@
 
   .advises {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "advises__title advises__list advises__list";
+    grid-template-areas: "advises__title advises__article advises__article";
   }
 
   .advises__title {
     grid-area: advises__title;
   }
 
-  .advises__list {
-    grid-area: advises__list;
+  .advises__article {
+    grid-area: advises__article;
   }
 
   .pictures {
@@ -367,15 +373,19 @@
   }
 }
 
-/*ТОЛЬКО ПЛАНШЕТ -- БЕЗ ЭТОГО ЗАПРОСА НЕ ПРОХОДИТ ПЕРФЕКТ-АВТОТЕСТ*/
+/*ТОЛЬКО ПЛАНШЕТ - доведение текста */
 @media (768px <= width < 1024px) {
-  .paragraph {
-    letter-spacing: 0.2px;
+  .why__list {
+    margin-inline-start: 7px;
+  }
+
+  .advises__article {
+    margin-inline-start: 7px;
   }
 }
 
 /*ТОЛЬКО БОЛЬШИЕ ЭКРАНЫ*/
-@media (1024px <= width < 5000px) {
+@media (1024px <= width) {
   .header__wrapper {
     display: grid;
     grid-template-columns: 1fr 350px 1fr;
@@ -396,32 +406,15 @@
     flex-direction: row;
   }
 
+  /* Цвет тени одинаковый на обеих темах. Но просто указывать его не стал, а задаю его через переменную для:
+   А) соблюдения единообразия подхода в работе с цветами, 
+   Б) удобства дальнейшей поддержки сайта */
+  .title {
+    text-shadow: 4px 4px 0 var(--special-shadow-color, #ff0070);
+  }
+
   .issues__list {
     grid-template-columns: repeat(3, 1fr);
     align-items: start;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-image: url(../images/cover-image-dark.png);
-    --accent-color: #ff0070;
-    --accent-color-hover: rgba(255, 0, 112, 0.4);
-    --title-color: #db00ff;
-    --mini-title-color: #000028;
-    --regular-text-color: #f1b2ce;
-    --second-title-color: #ff0070;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background-image: url(../images/cover-image-light.png);
-    --accent-color: #ff8dcb;
-    --accent-color-hover: rgba(50, 49, 45, 0.4);
-    --title-color: #ffc2e6;
-    --mini-title-color: #353430;
-    --regular-text-color: #353430;
-    --second-title-color: #353430;
   }
 }
