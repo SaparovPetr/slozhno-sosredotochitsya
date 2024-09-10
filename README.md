@@ -1,5 +1,5 @@
-# slozhno-sosredotochitsya
+# Проект "Сложно сосредоточиться"
+Адаптивный лендинг на гридах в светлой и тёмной темах.
 
-Проект "Сложно сосредоточиться"
-
-https://github.com/SaparovPetr/slozhno-sosredotochitsya.git
+Публикация: 
+https://saparovpetr.github.io/slozhno-sosredotochitsya/
