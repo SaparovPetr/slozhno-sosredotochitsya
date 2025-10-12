@@ -5,4 +5,4 @@
 Публикация:
 https://saparovpetr.github.io/slozhno-sosredotochitsya/
 
-![Результат](./result.png)
+![Результат](./result.jpg)
